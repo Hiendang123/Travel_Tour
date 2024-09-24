@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style1.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./animation-img.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Thêm CSS Select2 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <!-- Thêm JS Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  </head>
+  <body>
+    <section class="home">
+      <div class="home-box">
+        <nav class="navbar">
+          <div class="logo bars">
+            <div class="bar">
+              <i class="fa fa-bars"></i>
+            </div>
+            <h3>
+              <span  class="fist-logo" style="color: white;">EZTravel</span>
+            </h3>
+          </div>
+          <div class="menu">
+            <div class="close">
+              <i class="fa fa-close"></i>
+            </div>
+            <ul>
+              <li><a href="./Main.html">Trang chủ</a></li>
+              <!-- Home -->
+              <li><a href="./tour.html">Gói du lịch</a></li>
+              <!-- Tour Packages -->
+              <li><a href="./Main.html #Des">Điểm đến</a></li>
+              <!-- Destinations -->
+              <li><a href="#">Khách sạn</a></li>
+              <!-- Hotels -->
+              <li><a href="#">About</a></li>
+              <!-- About -->
+            </ul>
+          </div>
+          <div class="login-signup">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section
+      class="destination"
+      id="destination"
+      style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+    >
+      <label class="search">Tìm kiếm điểm đến của bạn</label>
+      <!-- Search for your destination -->
+      <div class="centerinput">
+        <div class="dia-diem" style="width: 80%; margin-left: 7%">
+          <h4 class="textvb">Choose the location of destination:</h4>
+          <select
+            class="tinh"
+            id="form-select"
+            aria-label="Default select example"
+            style="width: 80%"
+          >
+            <option selected>
+              Choose the location of destination you want to go to:
+            </option>
+            <option value="1">Hà Nội</option>
+            <option value="2">TP Hồ Chí Minh</option>
+            <option value="3">Đà Nẵng</option>
+            <option value="5">Đà Lạt</option>
+            <option value="6">Nha Trang</option>
+            <option value="7">Quảng Ninh</option>
+            <option value="8">Phú Quốc</option>
+            <option value="9">Kon Tum-Daklak</option>
+            <option value="10">Tây Ninh</option>
+            <option value="11">Huế </option>
+            <option value="12"> Quảng Nam</option>
+            <option value="13">Hải Phòng </option>
+            <option value="14">Phú Yên </option>
+            <option value="15">Bình Định</option>
+          </select>
+        </div>
+        <div class="price-container" style="margin-left: -10px">
+          <label style="font-weight: 500; margin-bottom: 5px" for="price"
+            >Price:</label
+          >
+          <input
+            type="number"
+            id="price"
+            class="form-control price-input"
+            style="width: 70%; height: 29px; border-radius: 50px"
+          />
+        </div>
+      </div>
+
+      <div class="check-in-out" style="margin-left: 7%">
+        <div class="input-group">
+          <h4 style="margin-right: 5px; font-size: 14px; margin-top: 8px">
+            Check in:
+          </h4>
+          <!-- Check in -->
+          <input
+            id="datetime"
+            type="date"
+            class="form-control1"
+            placeholder=" &nbsp; DD/MM/YYYY"
+            style="margin-bottom: 0px; width: 40%"
+          />
+        </div>
+
+        <div class="input-group" id="check-out" style="margin-left: -25%">
+          <h4 style="margin-right: 5px; font-size: 14px; margin-top: 8px">
+            Check out:
+          </h4>
+          <!-- Check out -->
+          <input
+            id="datetime"
+            type="date"
+            class="form-control1"
+            placeholder=" &nbsp; DD/MM/YYYY"
+            style="margin-bottom: 0px; width: 40%"
+          />
+        </div>
+        <button style="border-radius: 30px; margin-left: -150px; height: 40px">
+          Tìm kiếm
+        </button>
+      </div>
+      <!-- Search -->
+    </section>
+
+    <section>
+      <h3>Sale mùa du lịch</h3>
+      <!-- Seasonal Sale -->
+      <div class="container-HT">
+        <div class="Sale-object">
+          <div class="Sale-item">
+            <h4>Get 10% off on hotels in Da Nang.</h4>
+            <hr style="height: 2.5px; background-color: rgb(161, 161, 161);margin-left: 10px ;margin-right: 10px;border:none;"/>
+            <p class="Code-sale">CODE:DANANG10</p>
+          </div>
+        </div>
+        <div class="Sale-object">
+          <div class="Sale-item">
+            <h4>Get 15% off on hotels in Ha Noi.</h4>
+            <hr style="height: 2.5px; background-color: rgb(161, 161, 161);margin-left: 10px ;margin-right: 10px;border:none;"/>
+            <p class="Code-sale">CODE:HANOI15</p>
+          </div>
+        </div>
+        <div class="Sale-object">
+          <div class="Sale-item">
+            <h4>Get 12% off on hotels in Ho Chi Minh.</h4>
+            <hr style="height: 2.5px; background-color: rgb(161, 161, 161);margin-left: 10px ;margin-right: 10px;border:none;"/>
+            <p class="Code-sale">CODE:HCM12</p>
+          </div>
+        </div>
+        <div class="Sale-object">
+          <div class="Sale-item">
+            <h4>Get 20% off on hotels in Nha Trang.</h4>
+            <hr style="height: 2.5px; background-color: rgb(161, 161, 161);margin-left: 10px ;margin-right: 10px;border:none;"/>
+            <p class="Code-sale">CODE:NTRANG20</p>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-hotel" style="width: 100%">
+      <div class="colorlib-tour colorlib-light-grey">
+        <h2 class="hanoi">HOTEL IN HA NOI</h2>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box"
+            ></div>
+          </div>
+        </div>
+        <div class="tour-wrap">
+          <a href="./detail1.html?id=1" class="tour-entry animate-box" style="margin-left: 50px">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hanoi.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                996 Reviews
+              </p>
+              <h2>Hanoi Paradise Center Hotel & Spa</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Quận Hồ Hoàn Kiếm, Hà Nội</span>
+              <span class="price">1.270.000VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=2" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hanoi1.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                4.976 Reviews
+              </p>
+              <h2>22Land Residence Hotel & Spa</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>52 Ngô Quyền, Hà Nội</span>
+              <span class="price">891.000VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=3" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hanoi2.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                256 Reviews
+              </p>
+              <h2>Gallant Hotel</h2>
+              <span class="city">Quận Hai Bà Trưng, Hà Nội</span>
+              <span class="price">558.000VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=4" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hanoi3.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i> <i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                256 Reviews
+              </p>
+              <h2>Acoustic Hotel & Spa</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Quận Hoàn Kiếm, Hà Nội</span>
+              <span class="price">1.661.139VND</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-hotel" style="width: 100%">
+      <div class="colorlib-tour colorlib-light-grey">
+        <h2 class="hanoi">HOTEL IN TP.HO CHI MINH</h2>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box"
+            ></div>
+          </div>
+        </div>
+        <div class="tour-wrap">
+          <a href="./detail1.html ? id=1" class="tour-entry animate-box" style="margin-left: 50px">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hcm.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                7.530 Reviews
+              </p>
+              <h2>La Vela Saigon Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Quận 3, TP.Hồ Chí Minh</span>
+              <span class="price">2.641.760VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=2" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hcm2.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                804 Reviews
+              </p>
+              <h2>Nicecy Saigon Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Quận 1, TP.Hồ Chí Minh</span>
+              <span class="price">914.000VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=3" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hcm3.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                619 Reviews
+              </p>
+              <h2>Vilion Central Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Quận 1, TP.Hồ Chí Minh</span>
+              <span class="price">450.000VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=4" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-hcm4.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                307 Reviews
+              </p>
+              <h2>Lotus Laverne Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Quận Bình Thạnh, TP.Hồ Chí Minh</span>
+              <span class="price">720.000VND</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-trong1" style="height: 1vh"></section>
+
+    <section class="home-hotel" style="width: 100%">
+      <h2 class="hanoi">HOTEL IN DA NANG</h2>
+      <div class="colorlib-tour colorlib-light-grey">
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box"
+            ></div>
+          </div>
+        </div>
+        <div class="tour-wrap">
+          <a href="./detail1.html?id=5" class="tour-entry animate-box" style="margin-left: 50px">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dn.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                621 Reviews
+              </p>
+              <h2>Yen Vy Hotel and Apartment</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Bãi Biển Mỹ Khê, Đà Nẵng</span>
+              <span class="price">277.200VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=6" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dn2.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                762 Reviews
+              </p>
+              <h2>Shara Hotel Da Nang</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Bãi Biển Mỹ Khê, Đà Nẵng</span>
+              <span class="price">319.599VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=7" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dn3.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                1.114 Reviews
+              </p>
+              <h2>Everland Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Bãi Biển Mỹ Khê, Đà Nẵng</span>
+              <span class="price">595.000VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=8" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dn4.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                999 Reviews
+              </p>
+              <h2>De Lamour Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Bãi Biển Mỹ Khê, Đà Nẵng</span>
+              <span class="price">456.000VND</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-hotel" style="width: 100%">
+      <div class="colorlib-tour colorlib-light-grey">
+        <h2 class="hanoi">HOTEL IN DA LAT</h2>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box"
+            ></div>
+          </div>
+        </div>
+        <div class="tour-wrap">
+          <a href="./detail1.html ? id=9" class="tour-entry animate-box" style="margin-left: 50px">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dalat.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                290 Reviews
+              </p>
+              <h2>QA Hotel Dalat - City Centre</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 200m, Đà Lạt</span>
+              <span class="price">306.000VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=10" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dalat2.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                400 Reviews
+              </p>
+              <h2>BIDV Central Da Lat Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 0.7km, Đà Lạt</span>
+              <span class="price">354.535VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=11" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dalat3.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                259 Reviews
+              </p>
+              <h2>L'amie Hotel & Studio</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 0.7km, Đà Lạt</span>
+              <span class="price">252.200VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=12" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-dalat4.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                416 Reviews
+              </p>
+              <h2>Rose Valley Hotel Da Lat Vietnam</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 1.8km, Đà Lạt</span>
+              <span class="price">257.175VND</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-hotel" style="width: 100%">
+      <div class="colorlib-tour colorlib-light-grey">
+        <h2 class="hanoi">HOTEL IN NHA TRANG</h2>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box"
+            ></div>
+          </div>
+        </div>
+        <div class="tour-wrap">
+          <a href="./detail1.html ? id=13" class="tour-entry animate-box" style="margin-left: 50px">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-ntrang.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                421 Reviews
+              </p>
+              <h2>Vinpearl Beachfront Nha Trang</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 0.6km, Nha Trang</span>
+              <span class="price">1.980.000 VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=14" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-ntrang2.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                20 Reviews
+              </p>
+              <h2>Panorama Lux</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 30m, Nha Trang</span>
+              <span class="price">380.000 VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=15" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-ntrang3.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ></span>
+                259 Reviews
+              </p>
+              <h2>Moonlight Bay Panorama Ocean View</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 50m, Nha Trang</span>
+              <span class="price">565.000 VND</span>
+            </span>
+          </a>
+          <a href="./detail1.html ? id=16" class="tour-entry animate-box">
+            <div
+              class="tour-img"
+              style="background-image: url(img/Hotel/hotel-ntrang4.webp)"
+            ></div>
+            <span class="desc">
+              <p class="star">
+                <span
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+                475 Reviews
+              </p>
+              <h2>Palm Beach Hotel</h2>
+              <span class="city"> <i class="fa-solid fa-location-dot"></i>Cách trung tâm 300m, Nha Trang</span>
+              <span class="price">251.622 VND</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="top-hotel">Tại sao nên đặt chỗ ở EZTravel</h3>
+      <div class="Reason">
+        <div class="Reason-item">
+          <img src="./img/find.png" alt="png" />
+          <h5>Giá rẻ mỗi ngày với ưu đãi đặc biệt dành riêng cho ứng dụng</h5>
+          <h6>
+            Đặt phòng qua ứng dụng để nhận giá tốt nhất với các khuyến mãi tuyệt
+            vời!
+          </h6>
+        </div>
+        <div class="Reason-item">
+          <img src="./img/payment.png" alt="png" />
+          <h5>Phương thức thanh toán an toàn và linh hoạt</h5>
+          <h6>
+            Giao dịch trực tuyến an toàn với nhiều lựa chọn như thanh toán tại
+            cửa hàng tiện lợi, chuyển khoản ngân hàng, thẻ tín dụng đến Internet
+            Banking. Không tính phí giao dịch.
+          </h6>
+        </div>
+        <div class="Reason-item">
+          <img src="./img/anyquestion.png" alt="png" />
+          <h5>Hỗ trợ khách hàng 24/7</h5>
+          <h6>
+            Đội ngũ nhân viên hỗ trợ khách hàng luôn sẵn sàng giúp đỡ bạn trong
+            từng bước của quá trình đặt vé.
+          </h6>
+        </div>
+      </div>
+    </section>
+
+    <div class="colorlib-tour colorlib-light-grey">
+      <h2 class="hanoi">TOP KHÁCH SẠN ĐƯỢC ĐỀ XUẤT</h2>
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box"
+          ></div>
+        </div>
+      </div>
+      <div class="tour-wrap-top">
+        <a href="detail1.html?id=17" class="tour-entry animate-box" style="margin-left: 50px">
+          <div class="tour-img" style="background-image: url(img/Hotel/hotel-hanoi.webp)"></div>
+          <span class="desc">
+            <p class="star">
+              <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+              996 Reviews
+            </p>
+            <h2>Hanoi Paradise Center Hotel & Spa</h2>
+            <span class="city">Quận Hồ Hoàn Kiếm, Hà Nội</span>
+            <span class="price">1.270.000 VND</span>
+          </span>
+        </a>
+        
+        <a href="detail1.html?id=18" class="tour-entry animate-box" style="margin-left: 50px">
+          <div class="tour-img" style="background-image: url(img/Hotel/hotel-hcm.webp)"></div>
+          <span class="desc">
+            <p class="star">
+              <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+              7.530 Reviews
+            </p>
+            <h2>La Vela Saigon Hotel</h2>
+            <span class="city">Quận 3, TP.Hồ Chí Minh</span>
+            <span class="price">2.641.760 VND</span>
+          </span>
+        </a>
+        
+        <a href="detail1.html?id=19" class="tour-entry animate-box" style="margin-left: 50px">
+          <div class="tour-img" style="background-image: url(img/Hotel/hotel-ntrang.webp)"></div>
+          <span class="desc">
+            <p class="star">
+              <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+              421 Reviews
+            </p>
+            <h2>Vinpearl Beachfront Nha Trang</h2>
+            <span class="city">Cách trung tâm 0.6km, Nha Trang</span>
+            <span class="price">1.980.000 VND</span>
+          </span>
+        </a>
+        
+        <a href="detail1.html?id=20" class="tour-entry animate-box" style="margin-left: 50px">
+          <div class="tour-img" style="background-image: url(img/Hotel/hotel-ntrang.webp)"></div>
+          <span class="desc">
+            <p class="star">
+              <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+              421 Reviews
+            </p>
+            <h2>Vinpearl Beachfront Nha Trang</h2>
+            <span class="city">Cách trung tâm 0.6km, Nha Trang</span>
+            <span class="price">1.980.000 VND</span>
+          </span>
+        </a>
+      </div>
+      
+       
+        
+      </div>
+    </div>
+    <div
+      class="map"
+      style="width: 100%; border-color: black; height: 50px;"
+    ></div>
+    <footer>
+      <section class="footer">
+        <div class="container">
+          <div class="detail">
+            <h3>EZTravel</h3>
+            <p></p>
+            <h5>get in touch</h5>
+            <a href="#">HTHCompany@gmail.com</a>
+            <div class="social">
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="about-us">
+            <h4>about us</h4>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our term</a></li>
+            <li>
+              <a href="#">careers <span>we're hiring!</span></a>
+            </li>
+            <li><a href="#">mission and values</a></li>
+            <li><a href="#">partnerships</a></li>
+          </div>
+          <div class="about-us">
+            <h4>help</h4>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Booking guide</a></li>
+            <li><a href="#">Cancellation policy</a></li>
+            <li><a href="#">Site map</a></li>
+          </div>
+          <div class="about-us">
+            <h4>Resources</h4>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Vlog</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Offers</a></li>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <div>&copy;2024 - Travel, inc, all rights reserved</div>
+          <div>
+            <a href="#">term & conditions</a>
+            <a href="#">privacy policy</a>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+        $("#form-select").select2({
+          placeholder: " Choose the location of destination you want to go to:",
+        });
+      });
+    </script>
+    <script src="./JS/JS/admin.js"></script>
+    <script src="./JS/JS/detail1.js"></script>
+  </body>
+</html>

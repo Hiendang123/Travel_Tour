@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version of HTML used -->
+<!-- Code From Coding Classic - www.codingClassic.com -->
+<!-- Indicates the source of the code -->
+<html>
+  <!-- The root element of the HTML document -->
+  <head>
+    <!-- Contains metadata and links to external resources -->
+    <meta charset="UTF-8" />
+    <!-- Declares the character encoding of the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configures the viewport for responsive design -->
+    <title>Login Form</title>
+    <!-- Sets the title of the document -->
+    <link rel="stylesheet" href="./style2.css" />
+    <link rel="stylesheet" href="./style.css">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- Contains the content of the HTML document -->
+    <div class="container">
+      <!-- Container for the login form -->
+      <form action="#" id="login1">
+        <!-- Form element with placeholder action attribute -->
+        <h2>Fogot Password</h2>
+        <!-- Heading for the login section -->
+        <div class="input-space">
+          <!-- Container for input field and label -->
+          <input id="ussername" type="text" required />
+          <!-- Text input for email -->
+          <label>Username or Email</label>
+          <!-- Label for the email input -->
+        </div>
+        <button onclick="forgot()" type="button" style="margin-top: 30px">
+          Next
+        </button>
+        <!-- Button to submit the form -->
+        <div class="register">
+          <!-- Container for registration link -->
+          <p>Do you have an account? <a href="./login.html">Login</a></p>
+          <!-- Text with link to registration -->
+        </div>
+      </form>
+
+      <form action="#" id="login2" style="display: none">
+        <!-- Form element with placeholder action attribute -->
+        <h2>Fogot Password</h2>
+        <!-- Heading for the login section -->
+        <div class="input-space" style="margin-bottom: 30px">
+          <!-- Container for input field and label -->
+          <input id="newpass" type="text" required />
+          <!-- Text input for email -->
+          <label>New Password</label>
+          <!-- Label for the email input -->
+        </div>
+        <div class="input-space">
+          <!-- Container for input field and label -->
+          <input id="comfirmpass" type="text" required />
+          <!-- Text input for email -->
+          <label>Comfirm Password</label>
+          <!-- Label for the email input -->
+        </div>
+        <button onclick="forgott()" type="button" style="margin-top: 30px">
+          Forgot Password
+        </button>
+        <!-- Button to submit the form -->
+        <div class="register">
+          <!-- Container for registration link -->
+          <p>Do you have an account? <a href="./login.html">Login</a></p>
+          <!-- Text with link to registration -->
+        </div>
+      </form>
+    </div>
+    <script src="./JS/JS/user.js"></script>
+    <script src="./JS/JS/forgot.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+  </body>
+</html>

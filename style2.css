@@ -1,0 +1,223 @@
+/* Importing Google Fonts */
+/* 
+This line imports the Open Sans font family from Google Fonts. 
+The requested font weights are 200, 300, 400, 500, 600, and 700.
+The 'display=swap' parameter ensures text is displayed immediately with fallback fonts while the Open Sans font is loading.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+/* Global reset and font family */
+/* 
+This section resets the margin, padding, and box-sizing for all elements, and sets the default font family to Open Sans.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Body styling */
+/* 
+This section styles the body element, centering its contents both horizontally and vertically.
+It sets a minimum height of 100% of the viewport height and adds horizontal padding of 10 pixels.
+*/
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Background overlay */
+/* 
+This section adds a background overlay to the body using a pseudo-element (::before).
+The overlay consists of a background image and a fallback color of black.
+*/
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("./img/background-1.jpg"), #000;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Container styling */
+/* 
+This section styles the container element, setting its width, border radius, padding, and text alignment.
+It also applies a border with transparency, and adds a backdrop filter for blur effects.
+*/
+.container {
+  width: 480px;
+  border-radius: 9px;
+  padding: 32px;
+  text-align: center;
+  border: 2px solid rgba(255, 253, 253, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(9px); /* For Safari */
+}
+
+/* Form styling */
+/* 
+This section styles the form element, setting its display to flex and its direction to column.
+*/
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title styling */
+/* 
+This section styles the h2 element, setting its font size, margin bottom, and color.
+*/
+h2 {
+  font-size: 2rem;
+  margin-bottom: 19px;
+  color: white;
+}
+
+/* Input space styling */
+/* 
+This section styles the input-space class, which contains input fields and their labels.
+It sets the position of the labels, border for the input fields, and styles for focus and valid states.
+*/
+.input-space {
+  position: relative;
+  border-bottom: 3px solid white;
+  margin: 14px 0;
+}
+
+/* Input styling */
+/* 
+This section styles the input elements within the input-space class, setting their width, height, background, border, and color.
+*/
+.input-space input {
+  width: 100%;
+  height: 41px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: white;
+}
+
+/* Label styling */
+/* 
+This section styles the labels within the input-space class, setting their position, color, font size, and transition.
+*/
+.input-space label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+/* Label transition on focus or valid input */
+/* 
+This section styles the labels within the input-space class when the input is focused or has valid input.
+It adjusts the font size, position, and transition for smoother animation.
+*/
+.input-space input:focus ~ label,
+.input-space input:valid ~ label {
+  font-size: 0.9rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+/* "Remember me" and "Forgot password" styling */
+/* 
+This section styles the remember-forget class, which contains elements related to remembering login and forgetting password.
+It adjusts their alignment, margin, and color.
+*/
+.remember-forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 26px 0 36px 0;
+  color: white;
+}
+
+/* Checkbox styling */
+/* 
+This section styles the checkbox element for remembering login.
+*/
+#rememberme {
+  accent-color: white;
+}
+
+/* Styling for text next to checkbox */
+/* 
+This section styles the text next to the checkbox for remembering login.
+*/
+.remember-forget label p {
+  margin-left: 7px;
+}
+
+/* Styling for links */
+/* 
+This section styles the links within the container class, setting their color and text decoration.
+*/
+.container a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hover effect for links */
+/* 
+This section styles the hover effect for links within the container class, adding underline on hover.
+*/
+.container a:hover {
+  text-decoration: underline;
+}
+
+/* Button styling */
+/* 
+This section styles the button element, setting its background color, text color, font weight, border, padding, cursor, border radius, font size, and transition.
+*/
+button {
+  background: #100000;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 11px 19px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+/* Button hover effect */
+/* 
+This section styles the hover effect for buttons, changing the text color, border color, and background color on hover.
+*/
+button:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(53, 31, 31, 0.15);
+}
+
+/* Styling for registration link */
+/* 
+This section styles the registration link within the container class, setting its text alignment, margin top, and color.
+*/
+.register {
+  text-align: center;
+  margin-top: 29px;
+  color: #fff;
+}
+
+label.remembercb {
+  display: flex;
+}
+input {
+  text-transform: none;
+}

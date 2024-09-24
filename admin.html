@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Quản lý Gói Du Lịch</title>
+    <link rel="stylesheet" href="./admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body> 
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="tour-tab" data-toggle="tab" href="#tour" role="tab">Gói Du Lịch</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" role="tab">User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab">Khách Sạn</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- Tour Management -->
+        <div class="tab-pane fade show active" id="tour" role="tabpanel">
+          <header>
+            <h1>Quản Lý Gói Du Lịch</h1>
+            <button class="btn btn-primary" onclick="openTourModal()">+ Thêm Gói Mới</button>
+          </header>
+          <section class="admin-panel">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Tên Gói Du Lịch</th>
+                  <th>Giá</th>
+                  <th>Thời Gian</th>
+                  <th>Địa Điểm</th>
+                  <th>Mô Tả</th>
+                  <th>Hình Ảnh</th>
+                  <th>Hành Động</th>
+                </tr>
+              </thead>
+              <tbody id="tour-package-list"></tbody>
+            </table>
+          </section>
+        </div>
+
+        <!-- User Management -->
+        <div class="tab-pane fade" id="user" role="tabpanel">
+          <header>
+            <h1>Quản Lý User</h1>
+            <button class="btn btn-primary" onclick="openUserModal()">+ Thêm User Mới</button>
+          </header>
+          <section class="admin-panel">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Tên Đăng Nhập</th>
+                  <th>Họ Tên</th>
+                  <th>Số Điện Thoại</th>
+                  <th>Email</th>
+                  <th>Mật Khẩu</th>
+                  <th>Vai Trò</th>
+                  <th>Hành Động</th>
+                </tr>
+              </thead>
+              <tbody id="user-list"></tbody>
+            </table>
+          </section>
+        </div>
+
+        <!-- Hotel Management -->
+        <div class="tab-pane fade" id="hotel" role="tabpanel">
+          <header>
+            <h1>Quản Lý Khách Sạn</h1>
+            <button id="addHotelBtn" class="btn btn-primary" onclick="openHotelModal()">+ Thêm khách sạn</button>
+          </header>
+          <section class="admin-panel">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Tên Khách Sạn</th>
+                  <th>Địa Chỉ</th>
+                  <th>Review</th>
+                  <th>Giá</th>
+                  
+                  <th>Hình Ảnh</th>
+                  <th>Hành Động</th>
+                </tr>
+              </thead>
+              <tbody id="hotel-package-list"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tour Modal -->
+    <div class="modal fade" id="tourModal" tabindex="-1" role="dialog" aria-labelledby="tourModalTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tourModalTitle">Thêm/Sửa Thông Tin Gói Du Lịch</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="tour-id" />
+            <input type="text" id="tour-name" class="form-control" placeholder="Tên" />
+            <input type="text" id="tour-price" class="form-control" placeholder="Giá" />
+            <input type="text" id="tour-duration" class="form-control" placeholder="Thời Gian" />
+            <input type="text" id="tour-location" class="form-control" placeholder="Địa Điểm" />
+            <textarea id="tour-description" class="form-control" placeholder="Mô Tả"></textarea>
+            <input type="text" id="tour-images" class="form-control" placeholder="URL Hình Ảnh (cách nhau bằng dấu phẩy)" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-primary" onclick="saveTour()">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="userModalTitle">Thêm/Sửa Thông Tin User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="user-id" />
+            <input type="text" id="user-name" class="form-control" placeholder="Tên Đăng Nhập" />
+            <input type="text" id="user-fullname" class="form-control" placeholder="Họ Tên" />
+            <input type="text" id="user-phone" class="form-control" placeholder="Số Điện Thoại" />
+            <input type="email" id="user-email" class="form-control" placeholder="Email" />
+            <input type="password" id="user-password" class="form-control" placeholder="Mật Khẩu" />
+            <select id="user-role" class="form-control">
+              <option value="" disabled selected hidden>Vai Trò</option>
+              <option value="Admin">Admin</option>
+              <option value="User">User</option>
+            </select>
+            <input type="text" id="user-address" class="form-control" placeholder="Địa Chỉ" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-primary" onclick="saveUser()">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel Modal -->
+    <div
+    class="modal fade"
+    id="hotelModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="hotelModalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="hotelModalTitle">
+            Thêm/Sửa Thông Tin Khách Sạn
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="hotel-id" />
+          <input
+            type="text"
+            id="hotel-name"
+            class="form-control"
+            placeholder="Tên Khách Sạn"
+          />
+          <input
+            type="text"
+            id="hotel-price"
+            class="form-control"
+            placeholder="Giá"
+          />
+          <input
+            type="text"
+            id="hotel-location"
+            class="form-control"
+            placeholder="Địa Điểm"
+          />
+          <textarea
+            id="hotel-description"
+            class="form-control"
+            placeholder="Mô Tả"
+          ></textarea>
+          <input
+            type="text"
+            id="hotel-images"
+            class="form-control"
+            placeholder="URL Hình Ảnh (cách nhau bằng dấu phẩy)"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Đóng
+          </button>
+          <button type="button" class="btn btn-primary" onclick="saveHotel()">
+            Lưu
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./JS/JS/admin.js"></script>
+    <script src="./JS/JS/user.js"></script>
+    <script src="./JS/JS/tours.js"></script>
+    <script src="./JS/JS/hotel.js"></script>
+  </body>
+</html>

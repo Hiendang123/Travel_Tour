@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version of HTML used -->
+<!-- Code From Coding Classic - www.codingClassic.com -->
+<!-- Indicates the source of the code -->
+<html>
+  <!-- The root element of the HTML document -->
+  <head>
+    <!-- Contains metadata and links to external resources -->
+    <meta charset="UTF-8" />
+    <!-- Declares the character encoding of the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configures the viewport for responsive design -->
+    <title>Login Form</title>
+    <!-- Sets the title of the document -->
+    <link rel="stylesheet" href="./style2.css" />
+    <!-- Links an external CSS stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- Contains the content of the HTML document -->
+    <div class="container">
+      <!-- Container for the login form -->
+      <form action="#">
+        <!-- Form element with placeholder action attribute -->
+        <h2>SIGN UP</h2>
+        <!-- Heading for the login section -->
+        <div class="input-space">
+          <!-- Container for input field and label -->
+          <input id="fullnamed" type="text" required />
+          <!-- Text input for email -->
+          <label>Full Name</label>
+          <!-- Label for the email input -->
+        </div>
+        <div class="input-space">
+          <input id="usernamed" type="text" required />
+          <label>UserName</label>
+        </div>
+        <div class="input-space">
+          <!-- Container for input field and label -->
+          <input id="phoned" type="text" required />
+          <!-- Text input for email -->
+          <label>Phone Number</label>
+          <!-- Label for the email input -->
+        </div>
+        <div class="input-space">
+          <!-- Container for input field and label -->
+          <input id="emaild" type="text" required />
+          <!-- Text input for email -->
+          <label>Email</label>
+          <!-- Label for the email input -->
+        </div>
+        <div class="input-space">
+          <!-- Container for input field and label -->
+          <input id="passwordd" type="password" required />
+          <!-- Password input -->
+          <label>Enter your password</label>
+          <!-- Label for the password input -->
+        </div>
+        <div class="remember-forget">
+          <!-- Container for "Remember me" and "Forgot password" -->
+        </div>
+        <button onclick="dangky(event)" type="button">Register</button>
+        <!-- Button to submit the form -->
+        <div class="register">
+          <!-- Container for registration link -->
+          <p>Do you have an account? <a href="./login.html">Login</a></p>
+          <!-- Text with link to registration -->
+        </div>
+      </form>
+    </div>
+    <script src="./JS/JS/user.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+  </body>
+</html>

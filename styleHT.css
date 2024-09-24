@@ -1,0 +1,33 @@
+.Reason {
+    display: flex;
+    justify-content: space-between; /* Phân bố khoảng cách giữa các mục */
+    align-items: flex-start; /* Căn các mục theo hàng trên */
+    gap: 20px; /* Khoảng cách giữa các mục */
+    flex-wrap: wrap; /* Cho phép các mục xuống dòng nếu không đủ không gian */
+    margin-top: 20px;
+}
+
+.Reason-item {
+    flex: 1; /* Đặt mỗi mục có cùng độ rộng */
+    display: flex;
+    flex-direction: column; /* Xếp phần nội dung theo cột (hình ảnh, tiêu đề, mô tả) */
+    align-items: center; /* Căn nội dung ở giữa theo chiều ngang */
+    text-align: center; /* Căn chữ ở giữa */
+    max-width: 300px; /* Đặt giới hạn chiều rộng cho mỗi mục */
+}
+
+.Reason-item img {
+    width: 100px; /* Đặt chiều rộng cho hình ảnh */
+    height: auto; /* Giữ tỷ lệ của hình ảnh */
+    margin-bottom: 10px; /* Tạo khoảng cách giữa hình ảnh và tiêu đề */
+}
+
+.Reason-item h5 {
+    margin: 10px 0; /* Tạo khoảng cách cho tiêu đề */
+    font-size: 18px;
+}
+
+.Reason-item h6 {
+    font-size: 14px;
+    color: #555; /* Màu chữ nhạt hơn cho phần mô tả */
+}
